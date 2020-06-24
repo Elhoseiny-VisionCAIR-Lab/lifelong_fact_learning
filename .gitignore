@@ -1,4 +1,7 @@
 *__pycache__*
 *DS_Store*
-*py~
+*~
 *.idea*
+*.csv
+*.npy
+*.mat
