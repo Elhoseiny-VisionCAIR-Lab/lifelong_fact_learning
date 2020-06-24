@@ -4,6 +4,9 @@ This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact
 
 ## Requirements:
 
+To make things easier we provided the environment file `environment.yml` created by running the command `conda env export -f environment.yml`.
+To clone the environmentt you can simply run `conda env create -f environment.yml` from the project root directory.
+
 ## Training:
 
 To train one of the experiments in the paper follow the following steps:
