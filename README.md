@@ -1,6 +1,6 @@
 #Continual Fact Learning
 
-This a pytorch implementation of [insert paper link]
+This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact Learning](https://arxiv.org/pdf/1812.10524.pdf)
 ##Requirements
 
 ##Training:
