@@ -23,11 +23,11 @@ import torch
 import numpy as np
 import torch.nn.parallel
 from torchvision import transforms, models
-from Fact_learning_utils import train_eval_utils
-from Fact_learning_utils import sherlock_model_utils 
-from Fact_learning_utils import dataset_utils
-from Fact_learning_utils import elastic_caller
-from Fact_learning_utils.Elastic_utils import Elastic_Training
+from utils import train_eval_utils
+from utils import sherlock_model_utils
+from utils import dataset_utils
+from utils import elastic_caller
+from utils.Elastic_utils import Elastic_Training
 def fill_default_vals(root,previous_task_model_path,train_data_path,test_data_path,exp_dir,reg_lambda,epochs,lr,test_iter,batch):
     func_params=[]
     

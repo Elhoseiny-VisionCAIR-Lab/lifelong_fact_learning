@@ -1,10 +1,11 @@
 import argparse
 import sys
 import os
-sys.path.append('/home/abdelksa/c2044/lifelong_learning/code/code/')
-from Finetune_elastic import *
-from Finetune_objective_test import *
 import torch
+sys.path.append('/home/abdelksa/c2044/lifelong_fact_learning/code/')
+from models.Finetune_elastic import *
+from models.Finetune_objective_test import *
+from utils.Eval_mAP import *
 
 def parse_args():
     """Parse input arguments"""
@@ -84,7 +85,6 @@ def train_tasks(number_of_tasks):
         train_task(task_n)
 
 
-from Eval_mAP import *
 root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/sherlock_LSC/'
 
 # exp_root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/pytorch_models/disjoint_8tasks/objective_reg30_comulative_train_val/'
@@ -110,49 +110,3 @@ for k in range(1, 9):
     save_CV_dir =  save_CV_root + model_name + '/B%s'%str(k)
     #save in save_CV_dir + .mat
     extract_feat_mat(batch=batch,root=root,test_data_path=test_data_path, model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
-# # test the results
-# print('Training Done.')
-# print('Starting Evaluation.')
-# from Eval_mAP import *
-#
-# final_task_exp_dir = exp_root + 't4/'
-# model_to_evaluate_path = os.path.join(final_task_exp_dir, 'checkpoint.pth.tar')
-# output_results_path = '4tasks_objective_reg30_comulative_train_val_onall.pth.tar'
-# save_CV_dir = '/home/x_abdelks/c2044/lifelong_learning/dump/'
-# use_gpu_test=False
-# print('\ntest_4tasks_model_onal')
-# test_4tasks_model_onal(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                  output_results_path=output_results_path,
-#                                  save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-#
-# print('\neval_map_not_harsh_onall')
-# eval_map_not_harsh_onall(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                    save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-#
-# print('\neval_map_not_harsh_oneach')
-# eval_map_not_harsh_oneach(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                      target_batch_path=root + 'data_splits/4tasks/B1_test.cvs',
-#                                    save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-# eval_map_not_harsh_oneach(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                      target_batch_path=root + 'data_splits/4tasks/B2_test.cvs',
-#                                      save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-# eval_map_not_harsh_oneach(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                      target_batch_path=root + 'data_splits/4tasks/B3_test.cvs',
-#                                      save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-# eval_map_not_harsh_oneach(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                      target_batch_path=root + 'data_splits/4tasks/B4_test.cvs',
-#                                      save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-#
-# print('\neval_map_with_results')
-# eval_map_with_results(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                  target_batch_path=root + 'data_splits/4tasks/B1_test.cvs',
-#                                  save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-# eval_map_with_results(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                  target_batch_path=root + 'data_splits/4tasks/B2_test.cvs',
-#                                  save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-# eval_map_with_results(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                  target_batch_path=root + 'data_splits/4tasks/B3_test.cvs',
-#                                  save_CV_dir=save_CV_dir, batch=int(batch_size/2))
-# eval_map_with_results(root=root, model_to_evaluate_path=model_to_evaluate_path,
-#                                  target_batch_path=root + 'data_splits/4tasks/B4_test.cvs',
-#                                  save_CV_dir=save_CV_dir, batch=int(batch_size/2))

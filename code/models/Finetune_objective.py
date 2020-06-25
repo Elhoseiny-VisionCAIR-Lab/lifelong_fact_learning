@@ -20,12 +20,12 @@ import collections
 import torch
 import numpy as np
 from torchvision import transforms, models
-from Fact_learning_utils import train_eval_utils
-from Fact_learning_utils import sherlock_model_utils
-from Fact_learning_utils import dataset_utils
-from Fact_learning_utils import objective_based_caller
+from utils import train_eval_utils
+from utils import sherlock_model_utils
+from utils import dataset_utils
+from utils import objective_based_caller
 
-from Fact_learning_utils.Objective_gradient_utils import Objective_based_Training
+from utils.Objective_gradient_utils import Objective_based_Training
 
 def fill_default_vals(root, previous_task_model_path, train_data_path, test_data_path, exp_dir, reg_lambda, norm, epochs, lr, test_iter, batch):
     func_params=[]

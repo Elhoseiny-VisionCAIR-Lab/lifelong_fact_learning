@@ -8,8 +8,8 @@ Created on Mon Sep 25 09:40:38 2017
 import sys
 import os
 import pdb
-from Fact_learning_utils.Elastic_utils import Elastic_Training
-from Fact_learning_utils import train_eval_utils
+from utils.Elastic_utils import Elastic_Training
+from utils import train_eval_utils
 import torch
 def finetune_elastic(dset_loaders,model_ft,params,criterion, num_epochs=100,exp_dir='./', resume='',lr=0.0008,test_iter=1000,reg_lambda=1,use_multiple_gpu=None):
     

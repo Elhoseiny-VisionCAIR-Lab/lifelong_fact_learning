@@ -14,7 +14,7 @@ import scipy.io as sio
 from torch.autograd import Variable
 from PIL import ImageFile
 from torchvision import transforms, models
-from Fact_learning_utils.sherlock_model_utils import *
+from utils.sherlock_model_utils import *
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 ######################################################################################################
 #TRAIN functions

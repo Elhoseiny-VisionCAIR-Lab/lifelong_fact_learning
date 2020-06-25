@@ -33,8 +33,8 @@ from torchvision import transforms, models
 import numbers
 
 from PIL import ImageFile
-from Fact_learning_utils.Elastic_utils import Elastic_Training
-from Fact_learning_utils.Objective_gradient_utils import Objective_based_Training
+from utils.Elastic_utils import Elastic_Training
+from utils.Objective_gradient_utils import Objective_based_Training
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 

@@ -20,10 +20,10 @@ import torch
 import collections
 import shutil
 from torchvision import transforms
-from Fact_learning_utils import dataset_utils
-from Fact_learning_utils import train_eval_utils
-from Fact_learning_utils import sherlock_model_utils 
-from Fact_learning_utils import performance_utils
+from utils import dataset_utils
+from utils import train_eval_utils
+from utils import sherlock_model_utils
+from utils import performance_utils
 #from  Eval_mAP import *
 
 def fill_default_vals(root, model_to_evaluate_path, test_data_path,target_batch_path, save_CV_dir, NLP_feat_path, unique_facts_id_path, batch, score_type, ascending_flag, k, dict_pairs_path):

@@ -1,10 +1,11 @@
 import argparse
 import sys
 import os
-sys.path.append('/home/abdelksa/c2044/lifelong_learning/code/code/')
-from Finetune_elastic import *
-from Finetune_objective_test import *
 import torch
+sys.path.append('/home/abdelksa/c2044/lifelong_fact_learning/code/')
+from models.Finetune_elastic import *
+from models.Finetune_objective_test import *
+from utils.Eval_mAP import *
 
 def parse_args():
     """Parse input arguments"""
@@ -110,7 +111,6 @@ def train_tasks(number_of_tasks):
     for task_n in range(1, number_of_tasks + 1):
         train_task(task_n)
 
-from Eval_mAP import *
 root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/sherlock_LSC/'
 
 # exp_root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/pytorch_models/disjoint_8tasks/objective_reg30_comulative_train_val/'
