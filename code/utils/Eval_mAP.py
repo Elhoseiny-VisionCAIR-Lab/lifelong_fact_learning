@@ -39,7 +39,7 @@ def fill_default_vals(root, model_to_evaluate_path, test_data_path,target_batch_
         
           
     if save_CV_dir  is None:           
-        save_CV_dir = 'CV_feat/' + '/test/' 
+        save_CV_dir = 'outputs/CV_feat/' + '/test/'
     print('the exporting directory is: ', save_CV_dir)
       
     if model_to_evaluate_path is None:           

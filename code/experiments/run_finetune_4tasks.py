@@ -83,7 +83,7 @@ exp_root = '/home/abdelksa/c2044/lifelong_learning/6DS/Sherlock_data/pytorch_mod
 
 train_tasks(4)
 
-save_CV_root = root + '/CV_feat/'
+save_CV_root = root + '/outputs/CV_feat/'
 #model_to_evaluate_path='/home/abdelksa/c2044/lifelong_learning/6DS/Sherlock_data/pytorch_models/4tasks/t4/model_best.pth.tar'
 model_to_evaluate_path='/home/abdelksa/c2044/lifelong_learning/6DS/Sherlock_data/pytorch_models/{}/t4/model_best.pth.tar'.format(model_name)
 

@@ -48,11 +48,11 @@ else:
 try:
     base_lr = float(args.base_lr)
     lr = base_lr * num_of_gpu * 2
-    model_name = 'mas_8tasks_{}_reg{}_lr{:.0e}{}{}'.format(split, reg_lambda, base_lr, epochs_str) + tv
+    model_name = 'mas_8tasks_{}_reg{}_lr{:.0e}{}'.format(split, reg_lambda, base_lr, epochs_str) + tv
 except TypeError as e:
     base_lr = None
     lr=None
-    model_name= 'mas_8tasks_{}_reg{}_lr_def{}{}'.format(split, reg_lambda, epochs_str) + tv
+    model_name= 'mas_8tasks_{}_reg{}_lr_def{}'.format(split, reg_lambda, epochs_str) + tv
 
 
 print('reg_lambda', reg_lambda)
@@ -120,7 +120,7 @@ exp_root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/pytorch_models/{}/
 train_tasks(8)
 
 
-save_CV_root = root + '/CV_feat/'
+save_CV_root = root + '/outputs/CV_feat/'
 
 # MAS
 

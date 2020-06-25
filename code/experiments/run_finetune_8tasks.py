@@ -94,7 +94,7 @@ exp_root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/pytorch_models/{}/
 train_tasks(8)
 
 
-save_CV_root = root + '/CV_feat/'
+save_CV_root = root + '/outputs/CV_feat/'
 
 
 model_to_evaluate_path='/home/abdelksa/c2044/lifelong_learning/checkpoint/pytorch_models/{}/t8/model_best.pth.tar'.format(model_name)
