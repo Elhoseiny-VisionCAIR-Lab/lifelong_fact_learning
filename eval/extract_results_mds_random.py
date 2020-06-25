@@ -6,19 +6,16 @@ import scipy.io
 import json
 from pprint import pprint
 
-# addpath(genpath('./APcode'))
-# addpath(genpath('./AUCcode'))
-root='/home/abdelksa/c2044/lifelong_fact_learning/code'
+root='/home/abdelksa/c2044/lifelong_fact_learning/'
 model_names = os.listdir(root + '/outputs/CV_feat')
 model_names = sorted(model_names)
-# model_names = ['finetune_4tasks_random_reg0_lr3e-05']
 tembedding_path= root + 'eval/TEmbeddings/mid_scale/random/Temb_MD_random/'
 
 for model_name in model_names:
     if '4tasks_random' in model_name:
         print(model_name)
         for b in range(1, 5):
-            X_embedding=scipy.io.loadmat(root + '/outputs/CV_feat/' + model_name + '/B' + str(b) + 'XEmbeddings.mat')
+            X_embedding=scipy.io.loadmat(root + 'outputs/CV_feat/' + model_name + '/B' + str(b) + 'XEmbeddings.mat')
             X_embedding=X_embedding['XE']
             T_embedding=scipy.io.loadmat(tembedding_path + '/TEmbedding_seen_B' + str(b) + '_test.mat')
             T_embedding=T_embedding['B_T']

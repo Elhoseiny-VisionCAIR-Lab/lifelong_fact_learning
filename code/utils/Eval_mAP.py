@@ -47,11 +47,11 @@ def fill_default_vals(root, model_to_evaluate_path, test_data_path,target_batch_
     print('the model to evaluate is:', model_to_evaluate_path)
         
     if test_data_path is None:
-        test_data_path=root + 'data_info/test_SPO_df.cvs'
+        test_data_path=root + 'data_info/test_SPO_df.csv'
     print('the test data path is: ',test_data_path)
     
     if target_batch_path is None:
-        target_batch_path=root + 'data_splits/B2_test.cvs'
+        target_batch_path=root + 'data_splits/B2_test.csv'
     print('the target batch path is: ',target_batch_path)
     
     if batch is None:
@@ -68,7 +68,7 @@ def fill_default_vals(root, model_to_evaluate_path, test_data_path,target_batch_
         
     #import info about unique facts    
     if unique_facts_id_path is None:
-        unique_facts_id_path= root + 'data_info/Unique_facts_df.cvs'
+        unique_facts_id_path= root + 'data_info/Unique_facts_df.csv'
     print('Your unique facts ids info are saved in:', unique_facts_id_path)
     
     #define distance metric between NLP feat& CV feat
@@ -380,7 +380,7 @@ def eval_map(root=None, model_to_evaluate_path=None, test_data_path=None,target_
     
     #df1=pd.DataFrame({'CV_feat': CV_feat})
     #feat_df=pd.concat([df_test, df1], axis=1)
-    #feat_df.to_csv(save_CV_dir + 'CV_results.cvs', index=False)
+    #feat_df.to_csv(save_CV_dir + 'CV_results.csv', index=False)
     
     #################################################################################################################
     'COMPUTE THE MEAN AVERAGE PRECISION '
@@ -510,7 +510,7 @@ def eval_map_not_harsh_onall(root=None, model_to_evaluate_path=None, test_data_p
     
     #df1=pd.DataFrame({'CV_feat': CV_feat})
     #feat_df=pd.concat([df_test, df1], axis=1)
-    #feat_df.to_csv(save_CV_dir + 'CV_results.cvs', index=False)
+    #feat_df.to_csv(save_CV_dir + 'CV_results.csv', index=False)
   
     
     #merge duplicate
@@ -646,7 +646,7 @@ def eval_map_not_harsh_oneach(root=None, model_to_evaluate_path=None, test_data_
     
     #df1=pd.DataFrame({'CV_feat': CV_feat})
     #feat_df=pd.concat([df_test, df1], axis=1)
-    #feat_df.to_csv(save_CV_dir + 'CV_results.cvs', index=False)
+    #feat_df.to_csv(save_CV_dir + 'CV_results.csv', index=False)
   
     
     #merge duplicate
@@ -780,7 +780,7 @@ def i2f_topk_not_harsh(root=None, model_to_evaluate_path=None, test_data_path=No
     
     #df1=pd.DataFrame({'CV_feat': CV_feat})
     #feat_df=pd.concat([df_test, df1], axis=1)
-    #feat_df.to_csv(save_CV_dir + 'CV_results.cvs', index=False)
+    #feat_df.to_csv(save_CV_dir + 'CV_results.csv', index=False)
     
     
     #merge duplicate
@@ -917,12 +917,12 @@ def extract_features(root=None, model_to_evaluate_path=None, test_data_path=None
         CV_feat.sort()
         feat_df=df_test
         feat_df['CV_feat'] = CV_feat
-        feat_df.to_csv(save_CV_dir + 'CV_results.cvs', index=False)
+        feat_df.to_csv(save_CV_dir + 'CV_results.csv', index=False)
 
 def test_4tasks_model_onal(root,model_to_evaluate_path,output_results_path,save_CV_dir, batch):
     
     
-    target_batch_path=root+'data_splits/4tasks/B1_test.cvs'
+    target_batch_path=root+'data_splits/4tasks/B1_test.csv'
 
     ###########################################################################################################################
     results={}
@@ -938,7 +938,7 @@ def test_4tasks_model_onal(root,model_to_evaluate_path,output_results_path,save_
 
     ###########################################################################################################################
     #!rm -r /esat/jade/raljundi/B2_obj_res2/
-    target_batch_path=root+'data_splits/4tasks/B2_test.cvs'
+    target_batch_path=root+'data_splits/4tasks/B2_test.csv'
 
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res2/'
 
@@ -946,7 +946,7 @@ def test_4tasks_model_onal(root,model_to_evaluate_path,output_results_path,save_
     results['res_b2']=res_b2
 
     #!rm -r /esat/jade/raljundi/B2_obj_res3/
-    target_batch_path=root+'data_splits/4tasks/B3_test.cvs'
+    target_batch_path=root+'data_splits/4tasks/B3_test.csv'
 
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res3/'
 
@@ -954,14 +954,14 @@ def test_4tasks_model_onal(root,model_to_evaluate_path,output_results_path,save_
     results['res_b3']=res_b3
 
     #!rm -r /esat/jade/raljundi/B2_obj_res4/
-    target_batch_path=root+'data_splits/4tasks/B4_test.cvs'
+    target_batch_path=root+'data_splits/4tasks/B4_test.csv'
 
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res4/'
 
     res_b4=eval_map(root=root, target_batch_path=target_batch_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir, batch=batch)
     results['res_b4']=res_b4
 
-    target_batch_path=root + 'data_info/test_SPO_df.cvs'
+    target_batch_path=root + 'data_info/test_SPO_df.csv'
     #save_CV_dir='/esat/jade/raljundi/test_all/'
     res_all=eval_map(root=root, model_to_evaluate_path=model_to_evaluate_path, target_batch_path=target_batch_path, save_CV_dir=save_CV_dir, batch=batch)
     results['res_all']=res_all
@@ -972,7 +972,7 @@ def test_4tasks_model_onal(root,model_to_evaluate_path,output_results_path,save_
 def test_4tasks_disjoint_model_onall(root,model_to_evaluate_path,output_results_path,save_CV_dir):
     
     
-    target_batch_path=root+'data_splits/4tasks_disjoint/B1_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B1_test.csv'
 
     ###########################################################################################################################
     results={}
@@ -988,7 +988,7 @@ def test_4tasks_disjoint_model_onall(root,model_to_evaluate_path,output_results_
 
     ###########################################################################################################################
     #!rm -r /esat/jade/raljundi/B2_obj_res2/
-    target_batch_path=root+'data_splits/4tasks_disjoint/B2_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B2_test.csv'
 
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res2/'
 
@@ -996,7 +996,7 @@ def test_4tasks_disjoint_model_onall(root,model_to_evaluate_path,output_results_
     results['res_b2']=res_b2
 
     #!rm -r /esat/jade/raljundi/B2_obj_res3/
-    target_batch_path=root+'data_splits/4tasks_disjoint/B3_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B3_test.csv'
 
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res3/'
 
@@ -1004,14 +1004,14 @@ def test_4tasks_disjoint_model_onall(root,model_to_evaluate_path,output_results_
     results['res_b3']=res_b3
 
     #!rm -r /esat/jade/raljundi/B2_obj_res4/
-    target_batch_path=root+'data_splits/4tasks_disjoint/B4_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B4_test.csv'
 
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res4/'
 
     res_b4=eval_map(root=root,target_batch_path=target_batch_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
     results['res_b4']=res_b4
 
-    target_batch_path=root + 'data_info/test_SPO_df.cvs'
+    target_batch_path=root + 'data_info/test_SPO_df.csv'
     #if os.path.file.exists(target_batch_path):
     #save_CV_dir='/esat/jade/raljundi/test_all/'
     res_all=eval_map(root=root,model_to_evaluate_path=model_to_evaluate_path, target_batch_path=target_batch_path, save_CV_dir=save_CV_dir)
@@ -1023,7 +1023,7 @@ def test_4tasks_disjoint_model_onall(root,model_to_evaluate_path,output_results_
 def test_4tasks_disjoint_model_oneach(root,model_to_evaluate_path,output_results_path,save_CV_dir):
     
    
-    target_batch_path=root+'data_splits/4tasks_disjoint/B1_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B1_test.csv'
     test_data_path=target_batch_path
     ###########################################################################################################################
     results={}
@@ -1041,7 +1041,7 @@ def test_4tasks_disjoint_model_oneach(root,model_to_evaluate_path,output_results
 
     ###########################################################################################################################
     #!rm -r /esat/jade/raljundi/B2_obj_res2/
-    target_batch_path=root+'data_splits/4tasks_disjoint/B2_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B2_test.csv'
     test_data_path=target_batch_path
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res2/'
 
@@ -1049,7 +1049,7 @@ def test_4tasks_disjoint_model_oneach(root,model_to_evaluate_path,output_results
     results['res_b2']=res_b2
 
     #!rm -r /esat/jade/raljundi/B2_obj_res3/
-    target_batch_path=root+'data_splits/4tasks_disjoint/B3_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B3_test.csv'
     test_data_path=target_batch_path
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res3/'
     if  os.path.exists(save_CV_dir):
@@ -1058,7 +1058,7 @@ def test_4tasks_disjoint_model_oneach(root,model_to_evaluate_path,output_results
     results['res_b3']=res_b3
 
     #!rm -r /esat/jade/raljundi/B2_obj_res4/
-    target_batch_path=root+'data_splits/4tasks_disjoint/B4_test.cvs'
+    target_batch_path=root+'data_splits/4tasks_disjoint/B4_test.csv'
     test_data_path=target_batch_path
     #save_CV_dir='/esat/jade/raljundi/B2_obj_res4/'
     if  os.path.exists(save_CV_dir):
@@ -1087,7 +1087,7 @@ def eval_two_Tasks_not_duplicate_i2f_and_f2i(name, model_to_evaluate_path, root,
     results={}
     
     print(' %s ALL'%str(name))
-    target_data_path = root+ 'data_info/test_SPO_df.cvs'    
+    target_data_path = root+ 'data_info/test_SPO_df.csv'
     res_all=eval_map(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
     results['res_all_harsh'] = res_all
     res_all_nh=eval_map_not_harsh_onall(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
@@ -1099,7 +1099,7 @@ def eval_two_Tasks_not_duplicate_i2f_and_f2i(name, model_to_evaluate_path, root,
  
     #!rm -r /users/visics/fbabilon/Sherlock/export_Sherlock/CV_feat/cvae_from_B1_elastic/reg05/*
     print(' %s B1'%str(name))
-    target_data_path = root+ '/data_splits/B1_test.cvs'
+    target_data_path = root+ '/data_splits/B1_test.csv'
     
     res_b1_onall=eval_map_not_harsh_onall(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
     results['res_b1_onall'] = res_b1_onall
@@ -1112,7 +1112,7 @@ def eval_two_Tasks_not_duplicate_i2f_and_f2i(name, model_to_evaluate_path, root,
     results['i2f_res_b1'] = i2f_res_b1
 
     print(' %s B2'%str(name))
-    target_data_path=root+ '/data_splits/B2_test.cvs'
+    target_data_path=root+ '/data_splits/B2_test.csv'
     
     res_b2_onall=eval_map_not_harsh_onall(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
     results['res_b2_onall'] = res_b2_onall   
@@ -1143,7 +1143,7 @@ def eval_multiple_Tasks_not_duplicate_i2f_and_f2i(exp_res, model_to_evaluate_pat
     
     
     print(' %s ALL'%str(exp_res))
-    target_data_path = root+ 'data_info/test_SPO_df.cvs'    
+    target_data_path = root+ 'data_info/test_SPO_df.csv'
     res_all=eval_map(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
     results['res_all_harsh'] = res_all
     res_all_nh=eval_map_not_harsh_onall(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
@@ -1193,7 +1193,7 @@ def eval_four_Tasks_not_duplicate_i2f_and_f2i(name, model_to_evaluate_path, root
     
     
     print(' %s ALL'%str(name))
-    target_data_path = root+ 'data_info/test_SPO_df.cvs'    
+    target_data_path = root+ 'data_info/test_SPO_df.csv'
     res_all=eval_map(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
     results['res_all_harsh'] = res_all
     res_all_nh=eval_map_not_harsh_onall(target_batch_path=target_data_path,test_data_path=test_data_path,model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)

@@ -6,7 +6,7 @@ import scipy.io
 import json
 from pprint import pprint
 
-root='/home/abdelksa/c2044/lifelong_fact_learning/code'
+root='/home/abdelksa/c2044/lifelong_fact_learning/'
 model_names = os.listdir(root + '/outputs/CV_feat')
 model_names = sorted(model_names)
 tembedding_path= root + 'eval/TEmbeddings/large_scale/semantic/'
@@ -21,7 +21,7 @@ for model_name in model_names:
             T_embedding=T_embedding['B_T']
             TestData=scipy.io.loadmat(tembedding_path +'TestData_rnd_B' + str(b) + '_test.mat')
             TestData=TestData['BTestData']
-            res_name= root + '/results/lrs_results/semantic/' + model_name + '_batch' + str(b) + '_m1_nodup.mat'
+            res_name= root + 'results/lrs_results/semantic/' + model_name + '_batch' + str(b) + '_m1_nodup.mat'
             Result_exact=GetResults_exact_metric1(X_embedding,T_embedding,TestData,T_embedding,flag_nodup=True)
             # pprint(Result_exact['mAP'])
             print('T{}:'.format(b), '{:.2f}%'.format(Result_exact['KnowledgeMeanDetRatio_K5'] * 100.))

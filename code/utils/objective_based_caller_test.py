@@ -65,7 +65,7 @@ def normalize(model):
     return model
 ########################
 
-def update_objective_based_weights(root,model_ft,batch,use_gpu,norm='L2',  reg_sets=['data_info/B1_train.cvs']):
+def update_objective_based_weights(root,model_ft,batch,use_gpu,norm='L2',  reg_sets=['data_info/B1_train.csv']):
     
     #reg_params=Objective_based_Training.initialize_reg_params(model_ft)
     #model_ft.reg_params=reg_params

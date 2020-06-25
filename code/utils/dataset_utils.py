@@ -30,9 +30,9 @@ directories:
 - test - containing test images
 - train - containing train images
 
-cvs files:
-- train_SPO_df.cvs: dataframe with train information 
-- test_SPO_df.cvs:  dataframe with test information
+csv files:
+- train_SPO_df.csv: dataframe with train information 
+- test_SPO_df.csv:  dataframe with test information
 
 #additional files(to run sanity check):
 - Unique_Tuple_maps.txt: dataframe with id and extra info for each Unique fact 

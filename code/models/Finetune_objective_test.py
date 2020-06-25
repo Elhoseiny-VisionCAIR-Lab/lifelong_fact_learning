@@ -50,7 +50,7 @@ def fill_default_vals(root, previous_task_model_path, train_data_path, test_data
         print('the objective is the L2  of output of the Sherlock model')
      
     if reg_sets is None:
-        reg_sets=['data_info/B1_train.cvs']
+        reg_sets=['data_info/B1_train.csv']
     print('the objective regulizer is using data from ',' '.join(reg_sets))
    
     
@@ -65,11 +65,11 @@ def fill_default_vals(root, previous_task_model_path, train_data_path, test_data
     print('the previous task model is ',previous_task_model_path)
         
     if train_data_path is None:
-        train_data_path=root + 'data_info/B2_train.cvs'
+        train_data_path=root + 'data_info/B2_train.csv'
     print('the training data path is ',train_data_path)
         
     if test_data_path is None:
-        test_data_path=root + 'data_info/B2_test.cvs' 
+        test_data_path=root + 'data_info/B2_test.csv'
     print('the test data path is ',test_data_path)
         
     if epochs is None:    
