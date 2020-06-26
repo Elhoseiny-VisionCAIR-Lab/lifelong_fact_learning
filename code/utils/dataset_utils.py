@@ -290,7 +290,7 @@ def make_Cst_dataset( X_image, y_NLP, Unique_fact_id, w_s, w_p, w_o, folder):
     facts = []   
     for i in range(len(X_image)):  
         
-        image_path = folder + X_image[i]
+        image_path = folder + 'images/' +  X_image[i]
         NLP_path = folder + 'NLP_feat/' + y_NLP[i]
  
         item = [image_path, NLP_path, w_s[i], w_p[i], w_o[i], Unique_fact_id[i]]
