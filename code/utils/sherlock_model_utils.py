@@ -90,7 +90,8 @@ class Fact_Euclidian_Loss(nn.MSELoss):
         super(Fact_Euclidian_Loss, self).__init__()
        
     def forward(self, V_S, V_P, V_O, L_S, L_P, L_O, ws, wp, wo):        
-        return Fact_Euclidian_distance(V_S, V_P, V_O, L_S, L_P, L_O, ws, wp, wo, size_average=self.size_average)   
+        # return Fact_Euclidian_distance(V_S, V_P, V_O, L_S, L_P, L_O, ws, wp, wo, size_average=self.size_average)
+        return Fact_Euclidian_distance(V_S, V_P, V_O, L_S, L_P, L_O, ws, wp, wo)
 
 #############################################################################################################
 ################ GEN SAMPLES LOSS
@@ -140,7 +141,8 @@ class GEN_Euclidian_Loss(nn.MSELoss):
         super(GEN_Euclidian_Loss, self).__init__()
        
     def forward(self, V_S, L_S, ws):        
-        return GEN_Euclidian_distance(V_S, L_S, ws, size_average=self.size_average)   
+        # return GEN_Euclidian_distance(V_S, L_S, ws, size_average=self.size_average)
+        return GEN_Euclidian_distance(V_S, L_S, ws)
 ################ END OF GEN SAMPLES LOSS
 # Build Sherlock_Net functions
 class Model_2(nn.Module):
