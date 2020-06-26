@@ -50,22 +50,22 @@ def train_task(task_num):
 
     if task_num == 1:
         ###1st task
-        test_data_path = root + 'data/mid_scale/splits/4tasks_{}/B1_test.csv'.format(split)
-        train_data_path = root + 'data/mid_scale/splits/4tasks_{}/B1_train.csv'.format(split)
+        test_data_path = data_root + 'splits/4tasks_{}/B1_test.csv'.format(split)
+        train_data_path = data_root + 'splits/4tasks_{}/B1_train.csv'.format(split)
         previous_task_model_path = ''
 
         exp_dir = exp_root + 't1/'
 
-        finetune_elastic(root=root, batch=batch_size, train_data_path=train_data_path, test_data_path=test_data_path,
+        finetune_elastic(root=data_root, batch=batch_size, train_data_path=train_data_path, test_data_path=test_data_path,
                          previous_task_model_path=previous_task_model_path, exp_dir=exp_dir, reg_lambda=0, epochs=epochs,
                          lr=lr, use_multiple_gpu=1)
     else:
-        test_data_path = root + 'data/mid_scale/splits/4tasks_{}/B{}_test.csv'.format(split, task_num)
-        train_data_path = root + 'data/mid_scale/splits/4tasks_{}/B{}_train.csv'.format(split, task_num)
+        test_data_path = data_root + 'splits/4tasks_{}/B{}_test.csv'.format(split, task_num)
+        train_data_path = data_root + 'splits/4tasks_{}/B{}_train.csv'.format(split, task_num)
         previous_task_model_path = exp_root + 't{}/'.format(task_num - 1) + 'model_best.pth.tar'
         exp_dir = exp_root + 't{}/'.format(task_num)
 
-        finetune_elastic(root=root, batch=batch_size, train_data_path=train_data_path, test_data_path=test_data_path,
+        finetune_elastic(root=data_root, batch=batch_size, train_data_path=train_data_path, test_data_path=test_data_path,
                                       previous_task_model_path=previous_task_model_path, exp_dir=exp_dir,
                                       reg_lambda=reg_lambda, epochs=epochs, lr=lr, use_multiple_gpu=1)
 
@@ -74,9 +74,8 @@ def train_tasks(number_of_tasks):
         train_task(task_n)
 
 root = '/home/abdelksa/c2044/lifelong_fact_learning/'
+data_root = root + 'data/mid_scale/'
 
-# exp_root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/pytorch_models/disjoint_4tasks/objective_reg30_comulative_train_val/'
-# exp_root = '/home/abdelksa/c2044/lifelong_learning/6DS/Sherlock_data/pytorch_models/B2_elastic/reg_1/lr_06/'
 exp_root = root + 'checkpoints/mid_scale/{}/'.format(model_name)
 
 train_tasks(4)

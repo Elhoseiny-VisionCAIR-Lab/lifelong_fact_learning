@@ -51,11 +51,11 @@ def train_task(task_num):
     if task_num == 1:
         ###1st task
         if split=='semantic':
-            test_data_path = root + 'data/large_scale/splits/8tasks_{}/B1_BD_complete_test.csv'.format(split)
-            train_data_path = root + 'data/large_scale/splits/8tasks_{}/B1_BD_complete_train.csv'.format(split)
+            test_data_path = data_root + 'splits/8tasks_{}/B1_BD_complete_test.csv'.format(split)
+            train_data_path = data_root + 'splits/8tasks_{}/B1_BD_complete_train.csv'.format(split)
         else:
-            test_data_path = root + 'data/large_scale/splits/8tasks_{}/B1_test.csv'.format(split)
-            train_data_path = root + 'data/large_scale/splits/8tasks_{}/B1_train.csv'.format(split)
+            test_data_path = data_root + 'splits/8tasks_{}/B1_test.csv'.format(split)
+            train_data_path = data_root + 'splits/8tasks_{}/B1_train.csv'.format(split)
 
         previous_task_model_path = ''
 
@@ -66,11 +66,11 @@ def train_task(task_num):
                          lr=lr, use_multiple_gpu=1)
     else:
         if split=='semantic':
-            test_data_path = root + 'data/large_scale/splits/8tasks_{}/B{}_BD_complete_test.csv'.format(split, task_num)
-            train_data_path = root + 'data/large_scale/splits/8tasks_{}/B{}_BD_complete_train.csv'.format(split, task_num)
+            test_data_path = data_root + 'splits/8tasks_{}/B{}_BD_complete_test.csv'.format(split, task_num)
+            train_data_path = data_root + 'splits/8tasks_{}/B{}_BD_complete_train.csv'.format(split, task_num)
         else:
-            test_data_path = root + 'data/large_scale/splits/8tasks_{}/B{}_test.csv'.format(split, task_num)
-            train_data_path = root + 'data/large_scale/splits/8tasks_{}/B{}_train.csv'.format(split, task_num)
+            test_data_path = data_root + 'splits/8tasks_{}/B{}_test.csv'.format(split, task_num)
+            train_data_path = data_root + 'splits/8tasks_{}/B{}_train.csv'.format(split, task_num)
         previous_task_model_path = exp_root + 't{}/'.format(task_num - 1) + 'model_best.pth.tar'
         exp_dir = exp_root + 't{}/'.format(task_num)
 
@@ -84,9 +84,8 @@ def train_tasks(number_of_tasks):
 
 
 root = '/home/abdelksa/c2044/lifelong_fact_learning/'
+data_root = root + 'data/large_scale/'
 
-# exp_root = '/home/abdelksa/c2044/lifelong_learning/checkpoint/pytorch_models/disjoint_8tasks/objective_reg30_comulative_train_val/'
-# exp_root = '/home/abdelksa/c2044/lifelong_learning/6DS/Sherlock_data/pytorch_models/B2_elastic/reg_1/lr_06/'
 exp_root = root + 'checkpoints/large_scale/{}/'.format(model_name)
 
 train_tasks(8)
