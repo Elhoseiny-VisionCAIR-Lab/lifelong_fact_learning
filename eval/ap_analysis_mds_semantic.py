@@ -223,6 +223,11 @@ def do_analysis(T1_threshold, df):
 
     Table_rank_summary = np.zeros((metrics.shape[1], 3))
 
+    ap_scores_top5 = []
+    ap_scores_top10 = []
+    ap_rank_top5 = []
+    ap_rank_top10 = []
+
     for i in range(metrics.shape[1]):
         # metric_i = metrics[:,i]
         judges_i = judges[:, i]
@@ -253,24 +258,35 @@ def do_analysis(T1_threshold, df):
                                      average_precision_i_score]
         Table_rank_summary[i, :] = [average_precision_i_rank_1, average_precision_i_rank_5, average_precision_i_rank]
 
-        print(metric_names[i], 'AP by score = ', '{:0.2f}%'.format(average_precision_i_score * 100),
-              'AP by rank = ', '{:0.2f}%'.format(average_precision_i_rank * 100))
+        ap_scores_top5.append('{:0.2f}%'.format(average_precision_i_score_5 * 100))
+        ap_scores_top10.append('{:0.2f}%'.format(average_precision_i_score_10 * 100))
+        ap_rank_top5.append('{:0.2f}%'.format(average_precision_i_rank_5 * 100))
+        ap_rank_top10.append('{:0.2f}%'.format(average_precision_i_rank_10 * 100))
 
-        print(metric_names[i], 'AP by score at Top 1 = ', '{:0.2f}%'.format(average_precision_i_score_1 * 100),
-              'AP by rank at Top 1 = ', '{:0.2f}%'.format(average_precision_i_rank_1 * 100))
-
-        print(metric_names[i], 'AP by score at Top 5 = ', '{:0.2f}%'.format(average_precision_i_score_5 * 100),
-              'AP by rank at Top 5 = ', '{:0.2f}%'.format(average_precision_i_rank_5 * 100))
-
-        print(metric_names[i], 'AP by score at Top 10 = ', '{:0.2f}%'.format(average_precision_i_score_10 * 100),
-              'AP by rank  at Top 10 = ', '{:0.2f}%'.format(average_precision_i_rank_10 * 100))
-
+        # print(metric_names[i], 'AP by score = ', '{:0.2f}%'.format(average_precision_i_score * 100),
+        #       'AP by rank = ', '{:0.2f}%'.format(average_precision_i_rank * 100))
+        #
+        # print(metric_names[i], 'AP by score at Top 1 = ', '{:0.2f}%'.format(average_precision_i_score_1 * 100),
+        #       'AP by rank at Top 1 = ', '{:0.2f}%'.format(average_precision_i_rank_1 * 100))
+        #
+        # print(metric_names[i], 'AP by score at Top 5 = ', '{:0.2f}%'.format(average_precision_i_score_5 * 100),
+        #       'AP by rank at Top 5 = ', '{:0.2f}%'.format(average_precision_i_rank_5 * 100))
+        #
+        # print(metric_names[i], 'AP by score at Top 10 = ', '{:0.2f}%'.format(average_precision_i_score_10 * 100),
+        #       'AP by rank  at Top 10 = ', '{:0.2f}%'.format(average_precision_i_rank_10 * 100))
+        #
         # print(metric_names[i], prediction_type, ', AP by score at Top 20 = ', '{:0.2f}%'.format(average_precision_i_score_20),
         #       'AP by rank  at Top 20 = ', '{:0.2f}%'.format(average_precision_i_rank_20))
         #
         # print(metric_names[i], prediction_type, ', AP by score at Top 50 = ', '{:0.2f}%'.format(average_precision_i_score_50),
         #       'AP by rank  at Top 50 = ', '{:0.2f}%'.format(average_precision_i_rank_50))
         #
+
+    print('Exact, W2V_GN:')
+    print('AP scores top 5', *ap_scores_top5, sep='\t')
+    print('AP scores top 10', *ap_scores_top10, sep='\t')
+    print('AP ranks top 5', *ap_rank_top5, sep='\t')
+    print('AP ranks top 10', *ap_rank_top10, sep='\t')
 
     Table_score_summary = np.transpose(Table_score_summary)
 
@@ -359,6 +375,11 @@ def do_analysis_prd(T1_threshold, df):
 
     Table_rank_summary = np.zeros((metrics.shape[1], 3))
 
+    ap_scores_top5 = []
+    ap_scores_top10 = []
+    ap_rank_top5 = []
+    ap_rank_top10 = []
+
     for i in range(metrics.shape[1]):
         # metric_i = metrics[:,i]
         judges_i = judges[:, i]
@@ -394,19 +415,28 @@ def do_analysis_prd(T1_threshold, df):
 
         # print(metric_names[i], 'AP by score at Top 1 = ', '{:0.2f}%'.format(average_precision_i_score_1 * 100),
         #       'AP by rank at Top 1 = ', '{:0.2f}%'.format(average_precision_i_rank_1 * 100))
+        ap_scores_top5.append('{:0.2f}%'.format(average_precision_i_score_5 * 100))
+        ap_scores_top10.append('{:0.2f}%'.format(average_precision_i_score_10 * 100))
+        ap_rank_top5.append('{:0.2f}%'.format(average_precision_i_rank_5 * 100))
+        ap_rank_top10.append('{:0.2f}%'.format(average_precision_i_rank_10 * 100))
 
-        print(metric_names[i], 'AP by score at Top 5 = ', '{:0.2f}%'.format(average_precision_i_score_5 * 100),
-              'AP by rank at Top 5 = ', '{:0.2f}%'.format(average_precision_i_rank_5 * 100))
-
-        print(metric_names[i], 'AP by score at Top 10 = ', '{:0.2f}%'.format(average_precision_i_score_10 * 100),
-              'AP by rank  at Top 10 = ', '{:0.2f}%'.format(average_precision_i_rank_10 * 100))
-
+        # print(metric_names[i], 'AP by score at Top 5 = ', '{:0.2f}%'.format(average_precision_i_score_5 * 100),
+        #       'AP by rank at Top 5 = ', '{:0.2f}%'.format(average_precision_i_rank_5 * 100))
+        #
+        # print(metric_names[i], 'AP by score at Top 10 = ', '{:0.2f}%'.format(average_precision_i_score_10 * 100),
+        #       'AP by rank  at Top 10 = ', '{:0.2f}%'.format(average_precision_i_rank_10 * 100))
+        #
         # print(metric_names[i], prediction_type, ', AP by score at Top 20 = ', '{:0.2f}%'.format(average_precision_i_score_20),
         #       'AP by rank  at Top 20 = ', '{:0.2f}%'.format(average_precision_i_rank_20))
         #
         # print(metric_names[i], prediction_type, ', AP by score at Top 50 = ', '{:0.2f}%'.format(average_precision_i_score_50),
         #       'AP by rank  at Top 50 = ', '{:0.2f}%'.format(average_precision_i_rank_50))
         #
+    print('LCH,	WUP, RES, JCN, LIN, PATH, Exact, W2V_GN:')
+    print('AP scores top 5', *ap_scores_top5, sep='\t')
+    print('AP scores top 10', *ap_scores_top10, sep='\t')
+    print('AP ranks top 5', *ap_rank_top5, sep='\t')
+    print('AP ranks top 10', *ap_rank_top10, sep='\t')
 
     Table_score_summary = np.transpose(Table_score_summary)
 
