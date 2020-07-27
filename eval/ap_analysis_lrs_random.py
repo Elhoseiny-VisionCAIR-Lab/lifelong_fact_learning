@@ -253,11 +253,11 @@ def do_analysis(T1_threshold, df):
                                      average_precision_i_score]
         Table_rank_summary[i, :] = [average_precision_i_rank_1, average_precision_i_rank_5, average_precision_i_rank]
 
-        print(metric_names[i], 'AP by score = ', '{:0.2f}%'.format(average_precision_i_score * 100),
-              'AP by rank = ', '{:0.2f}%'.format(average_precision_i_rank * 100))
+        # print(metric_names[i], 'AP by score = ', '{:0.2f}%'.format(average_precision_i_score * 100),
+        #       'AP by rank = ', '{:0.2f}%'.format(average_precision_i_rank * 100))
 
-        print(metric_names[i], 'AP by score at Top 1 = ', '{:0.2f}%'.format(average_precision_i_score_1 * 100),
-              'AP by rank at Top 1 = ', '{:0.2f}%'.format(average_precision_i_rank_1 * 100))
+        # print(metric_names[i], 'AP by score at Top 1 = ', '{:0.2f}%'.format(average_precision_i_score_1 * 100),
+        #       'AP by rank at Top 1 = ', '{:0.2f}%'.format(average_precision_i_rank_1 * 100))
 
         print(metric_names[i], 'AP by score at Top 5 = ', '{:0.2f}%'.format(average_precision_i_score_5 * 100),
               'AP by rank at Top 5 = ', '{:0.2f}%'.format(average_precision_i_rank_5 * 100))
