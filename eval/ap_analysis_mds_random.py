@@ -474,42 +474,47 @@ for model_name in model_names:
     if '4tasks_random' in model_name:
         print(model_name)
         for b in range(1, 5):
+            x_embedding = scipy.io.loadmat(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat')
+            x_embedding = x_embedding['XE']
             t_embedding = scipy.io.loadmat(tembedding_path + 'TEmbedding_seen_B' + str(b) + '_test.mat')
             t_embedding = t_embedding['B_T']
             gt = pd.read_csv('./eval_files/gt_words/4tasks_random/' + 'B' + str(b) + '_gt.csv')
 
             if b == 1:
                 t_embedding_all = t_embedding
+                x_embedding_all = x_embedding
                 gt_all = gt
             else:
                 t_embedding_all = np.concatenate([t_embedding_all, t_embedding], axis=0)
+                x_embedding_all = np.concatenate([x_embedding_all, x_embedding], axis=0)
                 gt_all = gt_all.append(gt)
 
-        for b in range(1, 5):
-            if os.path.exists(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat'):
-                x_embedding = scipy.io.loadmat(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat')
-                x_embedding = x_embedding['XE']
+        # for b in range(1, 5):
+        #     if os.path.exists(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat'):
+        #         print('T{}'.format(b))
+                # x_embedding = scipy.io.loadmat(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat')
+                # x_embedding = x_embedding['XE']
 
-                t_embedding_s = t_embedding_all[:, :300]
-                t_embedding_p = t_embedding_all[:, 300:600]
-                t_embedding_o = t_embedding_all[:, 600:]
+        t_embedding_s = t_embedding_all[:, :300]
+        t_embedding_p = t_embedding_all[:, 300:600]
+        t_embedding_o = t_embedding_all[:, 600:]
 
-                t_embedding_so = np.concatenate([t_embedding_all[:, :300], t_embedding_all[:, 600:]], axis=0)
-                concatvalues = np.concatenate([gt_all.S.values, gt_all.O.values])
-                gt_all_SO = pd.DataFrame(concatvalues, columns=['SO'])
+        t_embedding_so = np.concatenate([t_embedding_all[:, :300], t_embedding_all[:, 600:]], axis=0)
+        concatvalues = np.concatenate([gt_all.S.values, gt_all.O.values])
+        gt_all_SO = pd.DataFrame(concatvalues, columns=['SO'])
 
-                x_embedding_s = x_embedding[:, :300]
-                x_embedding_p = x_embedding[:, 300:600]
-                x_embedding_o = x_embedding[:, 600:]
-                k = 100
+        x_embedding_s = x_embedding_all[:, :300]
+        x_embedding_p = x_embedding_all[:, 300:600]
+        x_embedding_o = x_embedding_all[:, 600:]
+        k = 100
 
-                topk_s = evaluate_each(t_embedding_so, x_embedding_s, gt_all_SO['SO'], k)
-                topk_p = evaluate_each(t_embedding_p, x_embedding_p, gt_all['P'], k)
-                topk_o = evaluate_each(t_embedding_so, x_embedding_o, gt_all_SO['SO'], k)
+        topk_s = evaluate_each(t_embedding_so, x_embedding_s, gt_all_SO['SO'], k)
+        topk_p = evaluate_each(t_embedding_p, x_embedding_p, gt_all['P'], k)
+        topk_o = evaluate_each(t_embedding_so, x_embedding_o, gt_all_SO['SO'], k)
 
-                print('\nSubjects:')
-                do_analysis(10, topk_s)
-                print('\nObjects:')
-                do_analysis(10, topk_o)
-                print('\nPredicates:')
-                do_analysis_prd(10, topk_p)
+        print('\nSubjects:')
+        do_analysis(10, topk_s)
+        print('\nObjects:')
+        do_analysis(10, topk_o)
+        print('\nPredicates:')
+        do_analysis_prd(10, topk_p)
