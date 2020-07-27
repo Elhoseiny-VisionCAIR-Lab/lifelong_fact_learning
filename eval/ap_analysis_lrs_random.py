@@ -282,11 +282,11 @@ def do_analysis(T1_threshold, df):
         #       'AP by rank  at Top 50 = ', '{:0.2f}%'.format(average_precision_i_rank_50))
         #
 
-    print('Exact, W2V_GN:')
-    print('AP scores top 5', *ap_scores_top5, sep='\t')
-    print('AP scores top 10', *ap_scores_top10, sep='\t')
-    print('AP ranks top 5', *ap_rank_top5, sep='\t')
-    print('AP ranks top 10', *ap_rank_top10, sep='\t')
+    print('Metric_type\tLCH\tWUP\tRES\tJCN\tLIN\tPATH\tExact\tW2V_GN:')
+    print('AP scores top 5\t', *ap_scores_top5, sep='\t')
+    print('AP scores top 10\t', *ap_scores_top10, sep='\t')
+    print('AP ranks top 5\t', *ap_rank_top5, sep='\t')
+    print('AP ranks top 10\t', *ap_rank_top10, sep='\t')
 
     Table_score_summary = np.transpose(Table_score_summary)
 
@@ -432,11 +432,11 @@ def do_analysis_prd(T1_threshold, df):
         # print(metric_names[i], prediction_type, ', AP by score at Top 50 = ', '{:0.2f}%'.format(average_precision_i_score_50),
         #       'AP by rank  at Top 50 = ', '{:0.2f}%'.format(average_precision_i_rank_50))
         #
-    print('LCH,	WUP, RES, JCN, LIN, PATH, Exact, W2V_GN:')
-    print('AP scores top 5', *ap_scores_top5, sep='\t')
-    print('AP scores top 10', *ap_scores_top10, sep='\t')
-    print('AP ranks top 5', *ap_rank_top5, sep='\t')
-    print('AP ranks top 10', *ap_rank_top10, sep='\t')
+    print('Metric_type\tExact\tW2V_GN:')
+    print('AP scores top 5\t', *ap_scores_top5, sep='\t')
+    print('AP scores top 10\t', *ap_scores_top10, sep='\t')
+    print('AP ranks top 5\t', *ap_rank_top5, sep='\t')
+    print('AP ranks top 10\t', *ap_rank_top10, sep='\t')
 
     Table_score_summary = np.transpose(Table_score_summary)
 
