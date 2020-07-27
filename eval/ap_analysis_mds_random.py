@@ -473,7 +473,7 @@ overall = True
 for model_name in model_names:
     if '4tasks_random' in model_name:
         print(model_name)
-        if not all([os.path.exists(CV_dir + model_name + '/T8' + '/B' + str(b) + 'XEmbeddings.mat') for b in range(1, 9)]):
+        if not all([os.path.exists(CV_dir + model_name + '/T4' + '/B' + str(b) + 'XEmbeddings.mat') for b in range(1, 5)]):
         # if not all([os.path.exists(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat') for b in range(1, 5)]):
             continue
         for b in range(1, 5):
