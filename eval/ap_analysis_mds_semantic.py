@@ -435,6 +435,7 @@ def parse_args():
 root='../'
 model_names = os.listdir(root + '/outputs/CV_feat')
 model_names = sorted(model_names)
+CV_dir = root + '/outputs/CV_feat/'
 tembedding_path= root + 'eval/eval_files/TEmbeddings/mid_scale/semantic/'
 upuntil_flag = True
 overall = True
