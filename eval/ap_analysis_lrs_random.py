@@ -443,7 +443,7 @@ for model_name in model_names:
     if '8tasks_random' in model_name:
         print(model_name)
         for b in range(1, 5):
-            t_embedding = scipy.io.loadmat(tembedding_path + 'TEmbedding_seen_B' + str(b) + '_test.mat')
+            t_embedding = scipy.io.loadmat(tembedding_path + 'TEmbedding_rnd_B' + str(b) + '_test.mat')
             t_embedding = t_embedding['B_T']
             gt = pd.read_csv('./eval_files/gt_words/4tasks_random/' + 'B' + str(b) + '_gt.csv')
 
