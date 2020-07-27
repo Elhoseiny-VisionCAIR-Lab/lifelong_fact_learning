@@ -7,6 +7,12 @@ This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact
 To make things easier we provided the environment file `environment.yml` created by running the command `conda env export -f environment.yml`.
 To clone the environmentt you can simply run `conda env create -f environment.yml` from the project root directory.
 
+## Data
+Download the 2 datasets used (Sherlock LSC, and 6DS) along with their annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=data.zip&subfolder_nav_tracking=1)
+and unzip the data.zip folder inside the project root directory.
+
+Download the embeddings and similarity matrices used for evaluation from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=eval_files.zip&subfolder_nav_tracking=1)
+and unzip the downloaded `eval_files.zip` under `eval/`
 ## Training:
 
 To train one of the experiments in the paper follow the following steps:

@@ -6,10 +6,10 @@ import scipy.io
 import json
 from pprint import pprint
 
-root='/home/abdelksa/c2044/lifelong_fact_learning/'
+root='../'
 model_names = os.listdir(root + '/outputs/CV_feat')
 model_names = sorted(model_names)
-tembedding_path= root + 'eval/TEmbeddings/mid_scale/semantic/Temb_MD_semantic/'
+tembedding_path= root + 'eval/eval_files/TEmbeddings/mid_scale/semantic/Temb_MD_semantic/'
 
 for model_name in model_names:
     if '4tasks_semantic' in model_name:
