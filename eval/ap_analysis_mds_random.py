@@ -473,8 +473,11 @@ overall = True
 for model_name in model_names:
     if '4tasks_random' in model_name:
         print(model_name)
+        if not all([os.path.exists(CV_dir + model_name + '/T8' + '/B' + str(b) + 'XEmbeddings.mat') for b in range(1, 9)]):
+        # if not all([os.path.exists(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat') for b in range(1, 5)]):
+            continue
         for b in range(1, 5):
-            x_embedding = scipy.io.loadmat(CV_dir + model_name + '/B' + str(b) + 'XEmbeddings.mat')
+            x_embedding = scipy.io.loadmat(CV_dir + model_name + '/T8' + '/B' + str(b) + 'XEmbeddings.mat')
             x_embedding = x_embedding['XE']
             t_embedding = scipy.io.loadmat(tembedding_path + 'TEmbedding_seen_B' + str(b) + '_test.mat')
             t_embedding = t_embedding['B_T']
@@ -518,3 +521,4 @@ for model_name in model_names:
         do_analysis(10, topk_o)
         print('\nPredicates:')
         do_analysis_prd(10, topk_p)
+        print('=========================================================================')
