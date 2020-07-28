@@ -16,7 +16,7 @@ for model_name in model_names:
     if '4tasks_semantic' in model_name:
         print(model_name)
         for b in range(1, 5):
-            X_embedding=scipy.io.loadmat(root + 'outputs/CV_feat/' + model_name + '/B' + str(b) + 'XEmbeddings.mat')
+            X_embedding=scipy.io.loadmat(root + 'outputs/CV_feat/' + model_name + '/T4/B' + str(b) + 'XEmbeddings.mat')
             X_embedding=X_embedding['XE']
             T_embedding=scipy.io.loadmat(tembedding_path + '/TEmbedding_seen_B' + str(b) + '_test.mat')
             T_embedding=T_embedding['B_T']
@@ -30,4 +30,4 @@ for model_name in model_names:
             # exit()
             # save(res_name,'Result_exact') # Todo: save as json
     print('T1, T2, T3, T4, mean:')
-    print(*results, sep'\t')
+    print(*results, sep='\t')
