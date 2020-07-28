@@ -121,7 +121,8 @@ The final project structure should look like this:
 │       └── splits
 ├── eval
 │   ├── APcode
-│   └── eval_files
+│   ├── eval_files
+│   └── ...
 └── outputs
     └── CV_feat
 ```
