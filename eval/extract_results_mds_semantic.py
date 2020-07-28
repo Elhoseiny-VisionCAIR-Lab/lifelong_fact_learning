@@ -14,6 +14,8 @@ tembedding_path= root + 'eval/eval_files/TEmbeddings/mid_scale/semantic/'
 for model_name in model_names:
     results = []
     if '4tasks_semantic' in model_name:
+        if not all([os.path.exists(CV_dir + model_name + '/T4' + '/B' + str(b) + 'XEmbeddings.mat') for b in range(1, 5)]):
+            continue
         print(model_name)
         for b in range(1, 5):
             X_embedding=scipy.io.loadmat(root + 'outputs/CV_feat/' + model_name + '/T4/B' + str(b) + 'XEmbeddings.mat')
@@ -29,5 +31,5 @@ for model_name in model_names:
             # print('T{}:'.format(b), '{:.2f}%'.format(Result_exact['KnowledgeMeanDetRatio_K5'] * 100.))
             # exit()
             # save(res_name,'Result_exact') # Todo: save as json
-    print('T1, T2, T3, T4, mean:')
-    print(*results, sep='\t')
+        print('T1, T2, T3, T4, mean:')
+        print(*results, sep='\t')
