@@ -49,13 +49,15 @@ To train one of the experiments in the paper follow the following steps:
 1. `cd code/experiments`
 2. run one of the scripts in the experiments folder as the below example:
  
-`python run_mas_8tasks.py --split random --reg_lambda 5 --base_lr 0.00005 --epochs 301 --trainval`
+`python run_mas_8tasks.py --split random --reg_lambda 5 --base_lr 0.00005 --batch_size 70 --epochs 301 --trainval`
 
 `split` the data split to train on. The options are: random and semantic
 
 `reg_lambda` the regulizer lambda to use
 
 `base_lr` the base learning rate
+
+`batch_size` the batch size
 
 `epochs` the number of epochs for each task
 
@@ -88,7 +90,6 @@ To run evaluation on our pre-trained models from Table 1:
 
 ## Directory Structure
 The final project structure should look like this:
-
 ```
 .
 ├── checkpoints
