@@ -9,7 +9,7 @@ from pprint import pprint
 root='../'
 model_names = os.listdir(root + '/outputs/CV_feat')
 model_names = sorted(model_names)
-tembedding_path= root + 'eval/eval_files/TEmbeddings/mid_scale/semantic/Temb_MD_semantic/'
+tembedding_path= root + 'eval/eval_files/TEmbeddings/mid_scale/semantic/'
 
 for model_name in model_names:
     results = []
