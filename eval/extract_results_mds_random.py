@@ -33,4 +33,4 @@ for model_name in model_names:
             # exit()
             # save(res_name,'Result_exact') # Todo: save as json
         print('T1, T2, T3, T4, mean:')
-        print(*results, sep='\t')
+        print(*results, np.mean(results), sep='\t')
