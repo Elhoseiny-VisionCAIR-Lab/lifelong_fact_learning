@@ -44,11 +44,14 @@ To make things easier we provided the environment file `environment.yml` created
 To clone the environmentt you can simply run `conda env create -f environment.yml` from the project root directory.
 
 ## Data
-Download the 2 datasets used (Sherlock LSC, and 6DS) along with their annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=data.zip&subfolder_nav_tracking=1)
-and unzip the data.zip folder inside the project root directory.
+### Mid-scale
+Download the mid-scale dataset (6DS) along with the annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=data.zip&subfolder_nav_tracking=1)
+and unzip the mid-scale.zip folder under `data/`.
 
-Download the embeddings and similarity matrices used for evaluation from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=eval_files.zip&subfolder_nav_tracking=1)
-and unzip the downloaded `eval_files.zip` under `eval/`
+### Large-scale
+Download the large-scale dataset (Sherlock LSC) along with the annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=data.zip&subfolder_nav_tracking=1)
+and unzip the large-scale.zip folder under `data/`.
+
 ## Training:
 
 To train one of the experiments in the paper follow the following steps:
@@ -73,26 +76,32 @@ After training is done the CV_features are automatically extracted and saved in 
 for evaluation.
 
 ## Evaluation:
-
-To evaluate the trained models run on of the following files:
-* `extract_results_lrs_random.py` for evaluating all the large-scale models on random split within `CV_feat` using standard evaluation.
-* `extract_results_lrs_semantic.py` for evaluating all the large-scale models on semantic within `CV_feat` using standard evaluation.
+### Mid-scale
+To evaluate the trained models on mid-scale data run on of the following files:
 * `extract_results_mds_random.py` for evaluating all the mid-scale models on random split within `CV_feat` using standard evaluation.
 * `extract_results_mds_semantic.py` for evaluating all the mid-scale models on semantic split within `CV_feat` using standard evaluation.
-* `extract_results_lrs_random_generalized.py` for evaluating all the large-scale models on random split within `CV_feat` using generalized evaluation.
-* `extract_results_lrs_semantic_generalized.py` for evaluating all the large-scale models on semantic within `CV_feat` using generalized evaluation.
 * `extract_results_mds_random_generalized.py` for evaluating all the mid-scale models on random split within `CV_feat` using generalized evaluation.
 * `extract_results_mds_semantic_generalized.py` for evaluating all the mid-scale models on semantic split within `CV_feat` using generalized evaluation.
-* `ap_analysis_lrs_random.py` for evaluating all the large-scale models on random split within `CV_feat` using the new metric inspired from [cite ltvrr].
-* `ap_analysis_lrs_semantic.py` for evaluating all the large-scale models on semantic within `CV_feat` using the new metric inspired from [cite ltvrr].
 * `ap_analysis_mds_random.py` for evaluating all the mid-scale models on random split within `CV_feat` using the new metric inspired from [cite ltvrr].
 * `ap_analysis_mds_semantic.py` for evaluating all the mid-scale models on semantic split within `CV_feat` using the new metric inspired from [cite ltvrr].
+
+### Large-scale
+To evaluate the trained models on large-scale data run on of the following files:
+
+* `extract_results_lrs_random.py` for evaluating all the large-scale models on random split within `CV_feat` using standard evaluation.
+* `extract_results_lrs_semantic.py` for evaluating all the large-scale models on semantic within `CV_feat` using standard evaluation.
+* `extract_results_lrs_random_generalized.py` for evaluating all the large-scale models on random split within `CV_feat` using generalized evaluation.
+* `extract_results_lrs_semantic_generalized.py` for evaluating all the large-scale models on semantic within `CV_feat` using generalized evaluation.
+* `ap_analysis_lrs_random.py` for evaluating all the large-scale models on random split within `CV_feat` using the new metric inspired from [cite ltvrr].
+* `ap_analysis_lrs_semantic.py` for evaluating all the large-scale models on semantic within `CV_feat` using the new metric inspired from [cite ltvrr].
 
 ## Running Evaluation on Pre-trained Models:
 
 To run evaluation on our pre-trained models from Table 1: 
 * Download the checkpoints folder from [here]() and unzip the checkpoints.zip folder in the project root directory.
 * Download the output visual embeddings from [here]() and unzip the CV_feat.zip folder under the root/outputs/ folder.
+
+Then simply run the desired evaluation script from the ones above to evaluate the downloaded models.
 
 ## Directory Structure
 The final project structure should look like this:
