@@ -101,7 +101,7 @@ def train_task(task_num):
 
         finetune_objective(root=data_root, batch=batch_size, b1=False, train_data_path=train_data_path, test_data_path=test_data_path,
                                       previous_task_model_path=previous_task_model_path, exp_dir=exp_dir, norm='L2',
-                                      reg_lambda=reg_lambda, reg_sets=reg_sets, epochs=epochs, lr=lr, use_multiple_gpu=0)
+                                      reg_lambda=reg_lambda, reg_sets=reg_sets, epochs=epochs, lr=lr, use_multiple_gpu=1)
 
 def train_tasks(number_of_tasks):
     for task_n in range(1, number_of_tasks + 1):
