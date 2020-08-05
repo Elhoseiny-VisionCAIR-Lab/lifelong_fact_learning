@@ -92,9 +92,9 @@ def train_task(task_num):
 
         previous_task_model_path = exp_root + 't{}/'.format(task_num - 1) + 'model_best.pth.tar'
 
-        reg_sets = ['/data/large_scale/splits/8tasks_{}/B{}_train.csv'.format(split, task_num - 1)]
+        reg_sets = ['/splits/8tasks_{}/B{}_train.csv'.format(split, task_num - 1)]
         if trainval:
-            reg_sets.append('/data/large_scale/splits/8tasks_{}/B{}_test.csv'.format(split, task_num - 1))
+            reg_sets.append('/splits/8tasks_{}/B{}_test.csv'.format(split, task_num - 1))
         exp_dir = exp_root + 't{}/'.format(task_num)
 
         finetune_objective(root=data_root, batch=batch_size, b1=False, train_data_path=train_data_path, test_data_path=test_data_path,
