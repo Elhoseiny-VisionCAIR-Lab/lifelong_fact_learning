@@ -45,11 +45,11 @@ To clone the environmentt you can simply run `conda env create -f environment.ym
 
 ## Data
 ### Mid-scale
-Download the mid-scale dataset (6DS) along with the annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=data.zip&subfolder_nav_tracking=1)
+Download the mid-scale dataset (6DS) along with the annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=mid_scale.zip&subfolder_nav_tracking=1)
 and unzip the mid-scale.zip folder under `data/`.
 
 ### Large-scale
-Download the large-scale dataset (Sherlock LSC) along with the annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=data.zip&subfolder_nav_tracking=1)
+Download the large-scale dataset (Sherlock LSC) along with the annotations from [here](https://www.dropbox.com/sh/dl0tzjo922um6jv/AACAOO0aFcNy0HI1r9ON303ja/LLL_files?dl=0&preview=large_scale.zip&subfolder_nav_tracking=1)
 and unzip the large-scale.zip folder under `data/`.
 
 ## Training:
