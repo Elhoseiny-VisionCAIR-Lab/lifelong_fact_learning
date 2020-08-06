@@ -124,5 +124,5 @@ if not os.path.exists(save_CV_root + model_name + '/T8'):
 
 for k in range(1, 9):
     test_data_path = root + '/data/large_scale/splits/8tasks_{}/B{}_test.csv'.format(split, k)
-    save_CV_dir =  save_CV_root + model_name + '/T{}'.format(t) + '/B%s'%str(k)
+    save_CV_dir =  save_CV_root + model_name + '/T8' + '/B%s'%str(k)
     extract_feat_mat(batch=batch,root=root,test_data_path=test_data_path, model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
