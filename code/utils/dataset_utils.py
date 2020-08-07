@@ -391,7 +391,7 @@ def make_Cst_eval_dataset( X_image, Unique_fact_id, folder):
     facts = []   
     for i in range(len(X_image)):  
         
-        image_path = os.path.join(folder, X_image[i]).replace("'", "")        
+        image_path = os.path.join(folder, 'images', X_image[i]).replace("'", "")
         item = [image_path, Unique_fact_id[i]]
         facts.append(item)
     return facts
@@ -451,8 +451,6 @@ class Cst_eval_Dataset(Dataset):
 
     def __getitem__(self, idx):
         image_path, label= self.fact[idx]
-        image_path = 'images/' +  image_path
-
         img = self.image_loader(image_path, self.root_dir)
         
         if self.transform :
