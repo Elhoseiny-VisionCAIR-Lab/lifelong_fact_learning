@@ -462,7 +462,7 @@ def parse_args():
 
     return parser.parse_args()
 
-root='../'
+root='/home/abdelksa/c2044/lifelong_fact_learning/'
 model_names = os.listdir(root + '/outputs/CV_feat')
 model_names = sorted(model_names)
 CV_dir = root + '/outputs/CV_feat/'

@@ -6,7 +6,7 @@ import scipy.io
 import json
 from pprint import pprint
 
-root='../'
+root='/home/abdelksa/c2044/lifelong_fact_learning/'
 model_names = os.listdir(root + '/outputs/CV_feat')
 model_names = sorted(model_names)
 CV_dir = root + '/outputs/CV_feat/'

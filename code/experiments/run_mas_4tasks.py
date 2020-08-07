@@ -2,7 +2,7 @@ import argparse
 import sys
 import os
 import torch
-sys.path.append('../')
+sys.path.append('/home/abdelksa/c2044/lifelong_fact_learning/code/')
 from models.Finetune_elastic import *
 from models.Finetune_objective_test import *
 from utils.Eval_mAP import *
@@ -107,7 +107,7 @@ def train_tasks(number_of_tasks):
     for task_n in range(1, number_of_tasks + 1):
         train_task(task_n)
 
-root = '../../'
+root = '/home/abdelksa/c2044/lifelong_fact_learning/'
 data_root = root + 'data/mid_scale/'
 
 exp_root = root + 'checkpoints/mid_scale/{}/'.format(model_name)
