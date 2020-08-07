@@ -127,4 +127,4 @@ for k in range(1,5):
     test_data_path = root + '/data/mid_scale/splits/4tasks_{}/B{}_test.csv'.format(split, k)
     save_CV_dir =  save_CV_root + model_name +  '/T4' + '/B%s'%str(k)
     #save in save_CV_dir + .mat
-    extract_feat_mat(batch=batch,root=root,test_data_path=test_data_path, model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
+    extract_feat_mat(batch=batch,root=data_root,test_data_path=test_data_path, model_to_evaluate_path=model_to_evaluate_path,save_CV_dir=save_CV_dir)
