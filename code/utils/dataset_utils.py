@@ -451,6 +451,8 @@ class Cst_eval_Dataset(Dataset):
 
     def __getitem__(self, idx):
         image_path, label= self.fact[idx]
+        image_path = 'images/' +  image_path
+
         img = self.image_loader(image_path, self.root_dir)
         
         if self.transform :
