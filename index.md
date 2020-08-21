@@ -9,6 +9,7 @@ This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact
         border: 1px solid black;
         }
 </style>
+
 ## Results on Mid-scale dataset random split
 | Method                         |  T1      | T2       | T3       | T4        | Mean      |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:   |  :----:   |
