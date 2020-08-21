@@ -1,3 +1,4 @@
+<img src="teaser3.png" alt="teaser" class="inline"/>
 # Lifelong Fact Learning:
 
 This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact Learning](https://arxiv.org/pdf/1812.10524.pdf)
