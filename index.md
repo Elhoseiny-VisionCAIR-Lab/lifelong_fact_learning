@@ -9,42 +9,47 @@ This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact
         border: 1px solid black;
         }
 </style>
-## Results on Mid-scale dataset (random split)
+## Results on Mid-scale dataset random split
 | Method                         |  T1      | T2       | T3       | T4        | Mean      |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:   |  :----:   |
 | Finetune                       |  72.77%  | 40.31%   | 33.87%   | 84.02%    | 57.74%    |
 | MAS                            |  78.82%  | 51.06%   | 48.17%   | 86.71%    | 66.19%    |
+{: .tablelines}
 
-## Results on Mid-scale dataset (semantic split)
+## Results on Mid-scale dataset semantic split
 | Method                         |  T1      | T2       | T3       | T4        | Mean      |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:   |  :----:   |
 | Finetune                       |  16.24%  | 35.63%   | 31.97%   | 8.86%     | 23.18%    |
 | MAS                            |  16.25%  | 35.63%   | 33.64%   | 15.51%    | 25.26%    |
+{: .tablelines}
 
-## Average Precision Analysis on mid-scale dataset (random split)
+## Average Precision Analysis on mid-scale dataset random split
 | Method                         |  LCH      | WUP       | RES       | JCN       |  LIN      | PATH      | W2V_GN     |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:   |  :----:   |  :----:   |  :----:   |
 | Finetune                       |  18.78%  | 18.69%   | 18.34%  | 23.43%     | 19.47%    | 18.78%     | 20.99%     |
 | MAS                            |  21.52%  | 22.41%   | 18.89%   | 17.28%    | 18.59%    | 21.52%	|   23.70%  |
+{: .tablelines}
 
-## Results on Large-scale dataset (random split)
+## Results on Large-scale dataset random split
 | Method                         |  T1      | T2       | T3       | T4       |  T5      | T6       | T7       | T8       | Mean     |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |
 | Finetune                       |  14.01%  | 23.83%   | 21.67%   | 17.43%   | 26.13%   | 17.99%   | 15.67%   | 43.44%   | 22.52%   |
 | MAS                            |  19.80%   | 30.37%  | 27.73%   | 24.62%   | 33.87%   | 25.36%   | 24.73%   | 43.65%   | 28.77%   |
+{: .tablelines}
 
-## Results on Large-scale dataset (semantic split)
+## Results on Large-scale dataset semantic split
 | Method                         |  T1      | T2       | T3       | T4       |  T5      | T6       | T7       | T8       | Mean     |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |
 | Finetune                       |          |          |          |          |          |          |          |          |          |
 | MAS                            |          |          |          |          |          |          |          |          |          |
+{: .tablelines}
 
-## Average Precision Analysis on mid-scale dataset (random split)
+## Average Precision Analysis on mid-scale dataset random split
 | Method                         |  LCH      | WUP       | RES       | JCN       |  LIN      | PATH      | W2V_GN     |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:   |  :----:   |  :----:   |  :----:   |
 | Finetune                       |  22.12%  | 21.62%   | 19.46%  | 20.77%     | 17.98%    | 22.12%     | 18.74%    |
 | MAS                            |  16.82%  | 18.14%   | 20.18%  | 17.91%     | 18.97%    | 16.82%	|   18.89%  |
-
+{: .tablelines}
 ## Requirements:
 
 To make things easier we provided the environment file `environment.yml` created by running the command `conda env export -f environment.yml`.
