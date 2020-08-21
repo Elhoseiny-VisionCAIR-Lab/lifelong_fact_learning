@@ -4,6 +4,11 @@
 
 This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact Learning](https://arxiv.org/pdf/1812.10524.pdf)
 
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+        border: 1px solid black;
+        }
+</style>
 ## Results on Mid-scale dataset (random split)
 | Method                         |  T1      | T2       | T3       | T4        | Mean      |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:   |  :----:   |
