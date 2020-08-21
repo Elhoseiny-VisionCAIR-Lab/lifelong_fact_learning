@@ -11,10 +11,12 @@ This a pytorch implementation of [Exploring the Challenges towards Lifelong Fact
 </style>
 
 ## Results on Mid-scale dataset random split
+|--------------------------------+----------+----------+----------+-----------+-----------|
 | Method                         |  T1      | T2       | T3       | T4        | Mean      |
 | :---                           |  :----:  |  :----:  |  :----:  |  :----:   |  :----:   |
 | Finetune                       |  72.77%  | 40.31%   | 33.87%   | 84.02%    | 57.74%    |
 | MAS                            |  78.82%  | 51.06%   | 48.17%   | 86.71%    | 66.19%    |
+|--------------------------------+----------+----------+----------+-----------+-----------|
 {: .tablelines}
 
 ## Results on Mid-scale dataset semantic split
